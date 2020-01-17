@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>miiiiikg</title>
+	<script src="https://kit.fontawesome.com/83b564820d.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/effect.css">
+	<style type="text/css">
+
+		.wrap {
+			border : 1px solid black;
+			max-width: 1400px;
+			display: flex;
+			justify-content: space-around;
+			box-sizing: border-box;
+			padding: 25px;
+			margin: 25px auto;
+		}
+		/* 사이드 내용 */
+		.side_wrap {
+			border : 1px solid red;
+			width: 450px;
+			height: 1000px;
+			margin-right : 25px;
+
+		}
+
+		.side_picture {
+			background-image: url(../img/라이언.jpg);
+			background-repeat: no-repeat;
+			height: 300px;
+			position: center center;
+			background-size: 100%
+
+		}
+		.side_intro_group {
+			padding: 18px;
+		}
+		.name {
+			font-size: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		.intro {
+			font-size: 20px;
+			line-height: 22px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.common_panel {
+			border-radius: 2px;
+			background-color: white;
+		}
+		.side_personal {
+			border-top : 1px solid #eee;
+			padding: 15px 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 120px;
+
+		}
+		.side_personal_group {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 15px;
+
+		}
+		.side_personal i {
+			color: #0f4c81;
+			width: 30px;
+		}
+		.side_sns {
+			border-top: 1px solid #eee;
+			padding: 15px 0;
+		}
+		.nav {
+			margin-top: 25px;
+		}
+		.menu_title {
+			background-color: #0f4c81;
+			color: white;
+			font-weight: bold;
+			padding: 8px 15px;
+			font-size: 18px;
+			border-top-left-radius: 2px;
+			border-top-right-radius: 2px;
+			display: flex;
+			align-items: center;
+
+		}
+		.menu_title i {
+			width: 20px;
+		}
+
+
+
+
+
+
+
+
+		
+		/* 소개내용 */
+		.content_wrap {
+			border: 1px solid blue;
+			width: 850px;
+			height: 1000px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrap">
+		<aside>
+			<div class="side_wrap">
+				<div class="common_panel layer">
+					<div class="side_picture"></div>
+					<div class="side_intro_group">
+						<div class="name">MiGyoeng Jin(진미경)</div>
+						<div class="intro">
+							나는야 웹개발자
+						</div>
+					</div>
+				<div class ="side_personal_group">
+					<div class="side_personal">
+						<div><i class="fas fa-briefcase"></i>Web Programmer</div>
+						<div><i class="fas fa-map-marker-alt"></i>Gwang-Ju, S.Korea </div>
+						<div><i class="far fa-envelope"></i>dbflalrud@naver.com</div>
+						<div><i class="fas fa-mobile-alt"></i>010-5048-7938</div>
+					</div>
+				</div>
+					
+					<div class="side_sns">
+						<div class = "middle">
+							<a class = "snsbtn" href="#">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+							<a class = "snsbtn" href="#">
+								<i class="fab fa-twitter"></i>
+							</a>
+							<a class = "snsbtn" href="#">
+								<i class="fab fa-google"></i>
+							</a>
+							<a class = "snsbtn" href="#">
+								<i class="fab fa-instagram"></i>
+							</a>
+							<a class = "snsbtn" href="#">
+								<i class="fab fa-youtube"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="common_panel layer nav">
+					<div class="menu_title">
+						<i class="fas fa-align-justify"></i>
+						<span>Menu</span>
+					</div>
+					<ul>
+						<li><a href="#">Tech Skills</a></li>
+						<li><a href="#">Education</a></li>
+						<li><a href="#">License</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</aside>
+
+		<section>
+			<div class="content_wrap"></div>
+		</section>
+	</div>
+</body>
+</html>

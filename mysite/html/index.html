@@ -15,11 +15,11 @@
 			justify-content: space-around;
 			box-sizing: border-box;
 			padding: 25px;
-			margin: 25px auto;
+			margin: 0 auto;
 		}
 		/* 사이드 내용 */
 		.side_wrap {
-			border : 1px solid red;
+			/*border : 1px solid red;*/
 			width: 450px;
 			height: 1000px;
 			margin-right : 25px;
@@ -99,17 +99,10 @@
 			line-height : 35px;
 		}
 
-
-
-
-
-
-
-
 		
 		/* 소개내용 */ 
 		.content_wrap {
-			border: 1px solid blue;
+			/*border: 1px solid blue;*/
 			width: 850px;
 			height: 1000px;
 		}
@@ -194,7 +187,7 @@
 		.fix_btn:hover > i {
 			transform: scale(1.3);
 		}
-		.conn_btn {
+		.conn_btn, .close_btn {
 			bottom: 30px;
 			background-color: #ff4d4d;
 		}
@@ -204,8 +197,8 @@
 		}
 		.msg_wrap {
 			position: absolute;
-			bottom: 0;
-			right: 90px;
+			bottom: 30px;
+			right: 150px;
 			background-color: white;
 			border-radius: 5px;
 			border : 1px solid #2f3138;
@@ -214,29 +207,80 @@
 		.note_wrap {
 			padding: 15px;
 			color: #2f3138;
-			font-size: 15px;
-			width: 340px;
+			font-size: 20px;
+			width: 700px;
 		}
 		.send_info {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 		}
+		.note_wrap > div {
+			margin-bottom: 8px;
+		}
 		.send_info > input {
 			width: 150px;
 		}
 		.note_wrap > div {
-			margin-bottom: 8px;
+			margin-bottom: 5px;
 		}
-		
+		.note_wrap input {
+			font-size: 20px;
+			color: #2f3138;
+			outline: none;
+			height: 35px;
+			padding: 7px 0 6px;
+			border: 0;
+			width: 100%;
+		}
+		.send_name, .send_email, .send_msg {
+			border: 1px solid #2f3138;
+			padding: 10px 35px 10px 15px;
+			width: 100%;
+		}
+		.area { width: 20px; }
+		.send_btn {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.send_btn > a {
+			width: 200px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 12px 15px;
+			border: 1px solid #414d41;
+			border-radius: 5px;
+		}
+		.err_msg {
+			color: red;
+			font-size: 20px;
+			visibility:hidden;
+		}
+		.modal_wrap {
+			position: fixed;
+			z-index: 100;
+			background-color: rgba(0,0,0,0.4);
+			overflow: auto;
+			width: 100%;
+			height: 100%;
+			display: none;
+		}
+
+	
+
 	</style>
 </head>
 
 <body>
 	<div class="top_btn fix_btn"><i class="fas fa-arrow-up"></i></div>
-	<div class="conn_btn fix_btn">
+	<div class="conn_btn fix_btn"><i class= "fas fa-envelope"></i></div>
+
+
+	<div class="modal_wrap">
+		<div class="close_btn fix_btn"><i class= "fas fa-times"></i></div>
 		<div class="msg_wrap">
-			
 			<div class="menu_title">
 				<i class="fas fa-envelope"></i>
 				<span> Message</span>
@@ -245,21 +289,29 @@
 			<div class="note_wrap">
 				<div class="conn_note">Please contace me if you are interested.</div>
 				<div class="send_info">
-					<input type="text" placeholder="Name">
-					<input type="text" placeholder="Email">
+					<!--input:send_name -> 350px input:send_email -> 350px -->
+					<!--부모 700px 자식 350px-->
+					<div class="send_name">
+						<input type="text" class= "send_input" placeholder="Name">
+					</div>
+					<div class="area"></div>
+					<div class="send_email">
+						<input type="text" class= "send_input" placeholder="Email">
+					</div>
 				</div>
+				<!-- inpur: send_msg -> 700px-->
 				<div class="send_msg">
-					<input type="text" placeholder="Message">
+					<input type="text" class= "send_input" placeholder="Message">
 				</div>
 				<div class="send_btn">
+					<span class="err_msg">Please enter a value:/</span>
 					<a href="#"><i class ="fas fa-rocket"></i> SEND MESSAGE</a>
 				</div>	
 			</div>
 
 		</div>
-		<i class= "fas fa-envelope"></i>
-	</div>
 
+	</div>
 
 	<div class="wrap">
 		<aside>
@@ -403,7 +455,7 @@
 							<tbody>
 								<tr><td>1</td><td>응용SW엔지니어링기반 디지털 컨버전스 SpringMVC 웹서비스 개발자 양성과정</td>
 								<td>한국경영원 인재개발원</td><td>2019.11.12 ~ 2020.06.12</td></tr>
-								<tr><td>2</td><td>정보보호, 정보처리 관련 교육</td><td>동신대학교 정보보안학과</td><td>2015.03.02 ~ 2020.02.21</td></tr>
+								<tr><td>2</td><td>정보보호, 정보처리 전공수업</td><td>동신대학교 정보보안학과</td><td>2015.03.02 ~ 2020.02.21</td></tr>
 							</tbody>
 						</table>
 					</div>
@@ -431,6 +483,8 @@
 			</div>
 		</section>
 	</div>
+
+	
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -445,6 +499,49 @@
 			var widthVal = $(this).text();
 			$(this).animate({width: widthVal}, 1000);
 		});
+	});
+
+	// 문자열, 숫자 등 값을 비교할때 '=='
+	$(document).on('blur', '.send_input', function() {
+		var inputVal = $(this).val();
+
+		// input blur시 유효성 체크(테두리 및 경고메시지 출력)
+		if(inputVal == '') { 
+			$('.err_msg').css('visibility','visible');
+			$(this).parent().css('border', '1px solid #dd4b4f');
+		} else {
+			$('.err_msg').css('visibility','hidden');
+			$(this).parent().css('border', '1px solid #2f3138');
+		}
+
+		// input값을 모두 비교하여 값이 있으면 버튼색상 변경
+	var code = 0;
+	$('.note_wrap').find('.send_input').each(function(){
+		if($(this).val() == '') {
+			return false; // break : 반복문 종료
+		} else {
+			code += 1;
+		}
+	});
+
+		if(code == 3) {
+			$('.send_btn > a').css('background-color', '#f9320c')
+							  .css('color', 'white');
+		} else {
+			$('.send_btn > a').css('background-color', 'white')
+							  .css('color', '#2f3138');
+		}
+	});
+
+	$(document).on('click','.conn_btn', function(){
+		$('.modal_wrap').css('display', 'block');
+		$(this).css('display','none');
+
+	});
+	$(document).on('click','.close_btn', function(){
+		$('.modal_wrap').css('display', 'none');
+		$('.conn_btn').css('display','flex');
+
 	});
 
 	

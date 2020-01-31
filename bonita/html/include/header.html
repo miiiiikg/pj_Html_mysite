@@ -187,91 +187,188 @@
 		}
 
 
-		/*===================================================*/
-		.login_popup h3 {
-			font-size: 33px;
-			text-align: center;
+		/*===============================================================================================로그인 창= */
+		* { -webkit-font-smoothing: antialiased; }
+		a:link { text-decoration: none;}
+		a:visited { text-decoration: none;}
+ 		a:hover {  text-decoration: none;}
+
+		div, span {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			vertical-align: baseline;
+			outline: 0;
+			/*border: 1px solid red;*/
 		}
-		
-		.tab_list {
-			/*font-size: 14px;*/
-			text-align: center;
+		ul, li, ol, dl, dt, dd {
+			list-style: none;
 		}
-		.selected {
-			display: inline-block;
-		}
-		.login_input_container {
+		.dt_popup {
+			position: fixed;
+			top: 0;
+			left: 0;
 			width: 100%;
-			padding-left: 20px;
-			border: 1px solid white;
+			height: 100%;
+			background: rgba(0,0,0,0.5);
+			z-index: 9999;
+		}
+		#pop_login, .dt_popup_inr {
+			width: 450px;
+			padding : 50px 45px;
+			background: #fff;
+			box-sizing: border-box;
+		}
+		.dt_popup, .dt_popup_inr {
+			position : absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%)
+			;
+		}
+		.pop_login_title {
+			font-size: 33px;
+			color: #333333;
 			text-align: center;
-			font-size: 14px;
-			margin-top: 5px;
+			text-transform: uppercase;
+		}
+		.pop_tab_list {
+			/*padding-top: 31px;*/
+			text-align: center;
+		}
+		.pop_tab_list li {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.tab_content.open {
+			display: block;
+		}
+		.tab_list_title {
+			font-size: 17px;
 		}
 		.MS_login_id, .MS_login_pw {
-			width: 338px;
-			height: 47px;
-			padding-left: 20px;
-			border: 1px solid #d9d9d9;
-			font-size: 14px;
+			width: 100%;
+			height: 40px;
+			padding-left: 10px;
+			font-size: 12px;
+			border: 1px solid #ddd;
+			box-sizing: border-box;
 		}
-		.MS_login_pw {
-			margin-top: 5px;
+		.login_input_box li {
+			padding-top: 10px;
 		}
-		.login_input_container {
-			margin-top: 16px;
+		.save_login {
+			display: inline-block;
+			vertical-align: top;
+			width: 50%;
 		}
-	
-		.login_check_container {
-			text-align: center;
-			font-size: 15px;
-			margin-top: 13px;
-
+		#chk_save_id {
+			-webkit-appearance : none;
+			display: inline-block;
+			vertical-align: middle;
+			width: 20px;
+			height: 20px;
+			border : 1px solid #ddd;
+			box-sizing: border-box;
 		}
-		.login_button {
-
-			color: #fff;
-			background-color: #333;
-			margin-top: 13px;
-			
+		.login_utile_box {
+			padding-top: 16px;
+			font-size: 0;
 		}
-		
-		.member_join_button{
-			margin-top: 5px;
-			background: #f2f2f2;
+		.login_utile_box label {
+			display: inline-block;
+			vertical-align: middle;
+			padding-left: 10px;
+			font-size: 13px;
+			color: #333333;
+			font-weight: 400;
 		}
-		.login_button, .member_join_button {
-			margin-left: 0px;
+		.security_login {
+			display: inline-block;
+			vertical-align: top;
+			width: 47%;
+			text-align: right;
+		}
+		.MS_security_checkbox {
+			-webkit-appearance : none;
+			display: inline-block;
+			vertical-align: middle;
+			width: 13px;
+			height: 16px;
+			box-sizing: border-box;
+		}
+		.security_login label {
+			padding-left: 5px;
+		}
+		.login_btn_box {
+			padding-top: 15px;
+		}
+		.login_input_box {
+			padding-top: 24px;
+		}
+		.login_btn_title {
 			display: block;
-			width: 366px;
+			width: 100%;
 			height: 56px;
 			font-size: 15px;
-			line-height: 56px;
+			color: #fff;
 			text-align: center;
+			line-height: 56px;
+			background: #333333;
 		}
-		.find_button {
+		.tab_content.open {
+			display: block;
+		}
+		.join_btn_title {
+			padding-top: 10px;
+			display: block;
+			width: 100%;
+			height: 56px;
+			margin-top: 5px;
+			font-size: 15px;
+			color: #363636;
+			text-align: center;
+			line-height: 56px;
+			background: #f2f2f2;
+			padding-bottom: 2px;
+		}
+		.id_pw_find_box {
+			font-size: 12px;
+			padding-top: 20px;
+		}
+
+		.id_pw_find_box dt {
+			display: inline;
+			text-align: right;
+			vertical-align: top;
+			width: 60%;
+			color: #333;
+			font-weight: 400;
+		}
+		.id_pw_find_box dd {
+			display: inline;
+			vertical-align: top;
+			width: 40%;
+			text-align: right;
+		}
+		.id_pw_find_box dd a {
 			display: inline-block;
-			font-size: 13px;
+			padding-bottom: 2px;
+			font-size: 12px;
+			color: #333;
+			background: space-between;
+			font-weight: 400;
+			border-bottom: 1px solid #333;
+		}
+		.id_pw {
+			width: 50%;
+			display: inline;
+			vertical-align: top;
+
+			text-align: right;
 		}
 		
-		div {
-			border: 1px solid red;
-		}
-		.tab_list_container > ul > div {
-			display: inline-block;
-			justify-content: space-between;
-		}
-		.text_wrap {
-			margin: 83px 40px;  /*가로  세로*/
-			border: 5px solid blue;
-		}
-		.check_login {
-			display: inline-block;
-			justify-content: space-between;
-
-		}
-
-		/*=======================================로그*/
+		/*====================================================================================로그*/
 		
 		.login_close {
 			position: absolute;
@@ -282,7 +379,7 @@
 			color: rgb(142, 142, 142);
 			border: none;
 			background: white;
-			font-size: 30px;
+			font-size: 17px;
 			cursor: pointer;
 			outline: none;
 		}
@@ -291,7 +388,7 @@
 		}
 		
 
-		/*비밀번호 눈*/
+		/*==============================================================================비밀번호 눈*/
 
 		.pw_eye {
 			position: absolute;
@@ -316,77 +413,76 @@
 
 	</style>
 </head>
+
+<!-------------------------------------------------- 모달창 로그인 ---------------------------------------------------->
 <body>
-	<div class="modal_wrap">
-		<div class="model_content">
+	<div class="dt_popup">
+		<div class="dt_popup_inr">
 			<div class="login_close">
 				<button><i class="fas fa-times"></i></button>
 			</div>
-			<div class="text_wrap">
-				<div class="login_popup">
-					<h3>LOGIN</h3>
-				<div class ="tab_list_container">
-					<ul class="tab_list">
-						<div>
-							<li class="selected"><a href="#"> 회원로그인</a></li>
+			<div class="pop_login_wrap">
+				<div class="pop_login_inr">
+					<h3 class="pop_login_title roboto_font">
+						<span class="title">LOGIN</span>
+					</h3>
+					<div class="pop_tab_list login_tab_list">
+						<ul>
+							<li class="active">
+								<a href="#" class="tab_list_title js_tab_btn">회원 로그인</a>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="tab_contents">
+						<div class="tab_content open">
+							<form name="formlogin" method="post" action ="">
+								<div class="login_input_box">
+									<ul>
+										<li>
+											<input type="text" name="id" maxlength="20" value class="MS_login_id" placeholder="아이디">
+										</li>
+										<li>
+											<div class="input_div">
+												<input type="password" name="passwd" maxlength="20" value class="MS_login_pw" placeholder="비밀번호">
+												<span class="pw_eye"><i class="fas fa-eye-slash"></i></span>
+											</div>
+										</li>
+									</ul>
+									<div class="login_utile_box">
+										<div class="save_login">
+											<input type="checkbox" name="save_id" id="chk_save_id" value="on">
+											<label for="chk_save_id">아이디 저장</label>
+										</div>
+										<div class="security_login">
+											<input type="checkbox" name="ssl" value="Y" class="MS_security_checkbox">
+											<label for> 보안접속</label>
+										</div>
+									</div>
+								</div>
+								<div class="login_btn_box">
+									<a href="#" class="login_btn_title"><span class="title">로그인</span></a>
+									<a href="https://nid.naver.com/user2/V2Join.nhn?m=agree&lang=ko_KR" class="join_btn_title"><span class="title">회원가입</span></a>
+								</div>
+							</form>
+							<div class="id_pw_find_box">
+								<dl>	
+									<dt>아이디/비밀번호를 잊으셨나요?</dt>
+									<div class="id_pw"><dd><a href="#">아이디/비밀번호 찾기</a></dd></div>
+								</dl>
+								<dl>
+									<dt>비회원으로 주문하셨나요?</dt>
+									<div class="id_pw"><dd><a href="#">비회원 주문조회</a></dd></div>
+								</dl>
+							</div>
 						</div>
-						<div>
-							<li class="selected"><a href="#">SNS 로그인</a></li>
-						</div>
-					</ul>
+						<div class="tab_content"></div>
+					</div>
 				</div>
 			</div>
-
-			
-		<div class="login_input_container">
-			<form>
-				<input type="text" name="id" id = "login_id" placeholder="아이디" class="MS_login_id">
-
-			<div class="input_div">
-				<input type="password" name="pw" id ="login_pw" placeholder="패스워드" class="MS_login_pw">
-				<span class="pw_eye"><i class="fas fa-eye-slash"></i></span>
-			</div>
 		</div>
-
-			<div class="login_check_container">
-				<div class="check_login">
-				<label class="save_id">
-				<input type="checkbox" name="save_id" > 아이디 저장 
-				</label>
-				</div>
-
-				<div class="check_login">
-				<label class="security">
-					<input type="checkbox" name="ssl" value="on" class="MS_security_checkbox"> 보안접속
-				</label>
-				 </div>
-				<a href="#" class="login_button">로그인</a>
-			</form>
-			<a href="#" class="member_join_button">회원가입</a>
-			
-			
-			
-		</div>
-		
-		<div class="find_button">
-			<div class="find_button_login">
-				<p>아이디/비밀번호를 잊으셨나요?</p>
-			</div>
-			<div class="find_button_login">
-				<a href="#" class="find_id_button">아이디/비밀번호 찾기</a>
-			</div>
-		</div>	
-
-
-		
-			
-				
-				
-			</div>
-		</div> <!-- model_content -->
-		
-	</div> <!-- modal_wrap -->
-
+	</div>
+<!---------------------------------------------------------------------------------------------------------------------------->
 	<div class="header_wrap">
 		<div class="header_content">
 			<div class="header_content_logo">
@@ -497,13 +593,13 @@
 	// Login 버튼 클릭시 modal창 open
 	// 로그인창 들어가면 바로 칠수있게 설정한것 id = "login_id" $('#login_id').focus(); 
 	$(document).on('click','.login_open', function(){
-		$('.modal_wrap').css('display','flex');
+		$('.dt_popup').css('display','flex');
 		$('#login_id').focus();
 	});
 
 	// modal창의 x버튼을 클릭하면 modal창 close
 	$(document).on('click', '.login_close', function(){
-		$('.modal_wrap').css('display', 'none');
+		$('.dt_popup').css('display', 'none');
 		//$('.frm_login')[0].reset();
 		$('.login_input').val('');
 

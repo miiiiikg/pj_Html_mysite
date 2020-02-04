@@ -5,6 +5,7 @@
 	<link rel="icon" type="image/png" href="../Img/naver/naversm.png">
 	<script src="https://kit.fontawesome.com/83b564820d.js" crossorigin="anonymous"></script>
 	<style type="text/css">
+/*css 시작*/
 		/* 모든 글씨체를 font-family */
 		* {
 			font-family: Dotum,'돋움', Helvetica, sans-serif;
@@ -46,10 +47,10 @@
 		.join_content {
 			width: 460px;
 			margin: 0 auto;
-	/*		border: 1px solid blue;*/
+		/*		border: 1px solid blue;*/
 		}
 		.row_group {
-			overflow: hidden;
+			/*overflow: hidden;*/
 			width: 100%;
 		}
 		.join_title {
@@ -104,7 +105,7 @@
 			background: #f2f2f2;
 			padding-bottom: 2px;
 		}
-	/*	.out {
+		/*	.out {
 			display: block;
 			position: relative;
 			width: 50%;
@@ -243,18 +244,20 @@
 		#address a:hover {
 			color: #8E85D6;
 		}
+/*css 종료*/
 	</style>
 </head>
 <body>
 	<div class="wrap">
 		<header><div class="header">
+
 			<h1 class="naver_logo">
 				<a href="#" class="n_logo">
 					<img src= "C:/bizwork/workspace/webdesign_workspace/bonita/img/이름 없음1.png" width="250">
 				</a>
 			</h1>
 		</div></header>
-
+	<!-- section 열기/닫기 -->
 		<section>
 			<!--form태그를 작성할때 name action(목적지) method(보내는방식) : get방식 -> 검색 , post방식 -> 개인정보 -->
 			<form name="frm_join" action="" method="POST">
@@ -277,13 +280,19 @@
 									<label for="pswd1">비밀번호</label>
 								</h3>
 								<span class="ps_box int_pass">
-									<input type="text" id="upswd1" name="upswd1" class="int">
+									<input type="password" id="upswd1" name="upswd1" class="int">
 									<span class="step_url"><span class="pw_lock"></span></span>
 								</span>
+								<div>
+								<span class="ps_box int_pass">
+									<input type="password" id="upswd2" name="upswd2" class="int">
+									<span class="step_url"><span class="repw_lock"></span></span>
+								</span>
 								<span class="error_next_box">필수 정보입니다.</span>
+								
 							</div>
 
-							<div class="join_row">
+							<!-- <div class="join_row">
 								<h3 class="join_title">
 									<label for="pswd2">비밀번호 재확인</label>
 								</h3>
@@ -293,7 +302,7 @@
 								</span>
 								<span class="error_next_box">필수 정보입니다.</span>
 							</div>
-						</div>
+						</div> -->
 
 						<div class="row_group">
 							<div class="join_row">
@@ -307,78 +316,27 @@
 							</div>
 						</div>
 
-						<div class="join_row join_birthbay">
+						<div class="join_row">
 								<h3 class="join_title">
-									<label for="yy">생년월일</label>
+									<label for="phone">휴대전화</label>
 								</h3>
-								<div class="bir_wrap">
-									<div class="bir_yy">
-										<span class="ps_box">
-											<input type="text" id="yy" name="yy" class="int" placeholder="년(4자)">
-										</span>
-									</div>
-									<div class="bir_mm">
-										<span class="ps_box">
-											<select id="mm" class="sel">
-												<option>월</option>
-												<option value="01">1</option>
-												<option value="02">2</option>
-												<option value="03">3</option>
-												<option value="04">4</option>
-												<option value="05">5</option>
-												<option value="06">6</option>
-												<option value="07">7</option>
-												<option value="08">8</option>
-												<option value="09">9</option>
-												<option value="10">10</option>
-												<option value="11">11</option>
-												<option value="12">12</option>
-											</select>
-										</span>
-									</div>
-									<div class="bir_dd">
-										<span class="ps_box">
-											<input type="text" id="dd" class="int" placeholder="일">
-										</span>
-									</div>
-								</div>
+								<span class="ps_box">
+									<input type="tel" id="uphone" name="uphone" class="int" placeholder="-없이 입력 예)01012345678">
+								</span>
 								<span class="error_next_box">필수 정보입니다.</span>
 							</div>
 
-							<div class="row_group">
-								<div class="join_row">
-									<h3 class="join_title">
-										<label for="name">주소</label>
-									</h3>
-									<div class="bir_yy" >
-										<span class="ps_box">
-											<input type="text" id="sample6_postcode" placeholder="우편번호" class="int">
-										</span>
-									</div>
-									<div class = "bir_mm">
-										<span class="ps_box">
-											<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="int"><br>
-										</span>
-									</div>
-									<div class="home">	
-										<span class="ps_box">
-											<input type="text" id="sample6_address" placeholder="주소" class="int"><br>
-										</span>
-									</div>
-									<div class="home">
-										<span class="ps_box">
-											<input type="text" id="sample6_detailAddress" placeholder="상세주소" class="int">
-										</span>
-									</div>
-									
-									<span class="error_next_box">필수 정보입니다.</span>
 
-								</div>
+							<div class="join_row">
+								<h3 class="join_title">
+									<label for="email">본인 확인 이메일<span class="choice">(선택)</span></label>
+								</h3>
+								<span class="ps_box">
+									<input type="text" id="uemail" name="uemail" class="int" placeholder="선택입력">
+								</span>
+								<span class="error_next_box">필수 정보입니다.</span>
 							</div>
 
-
-							
-							
 							<div class="join_row">
 								<h3 class="join_title">
 									<label for="male">성별</label>
@@ -393,36 +351,88 @@
 								<span class="error_next_box">필수 정보입니다.</span>
 							</div>
 
-							<div class="join_row">
-								<h3 class="join_title">
-									<label for="email">본인 확인 이메일<span class="choice">(선택)</span></label>
-								</h3>
-								<span class="ps_box">
-									<input type="text" id="uemail" name="uemail" class="int" placeholder="선택입력">
-								</span>
-								<span class="error_next_box">필수 정보입니다.</span>
-							</div>
 
-							<div class="join_row">
-								<h3 class="join_title">
-									<label for="phone">휴대전화</label>
-								</h3>
-								<span class="ps_box">
-									<input type="tel" id="uphone" name="uphone" class="int" placeholder="-없이 입력 예)01012345678">
-								</span>
-								<span class="error_next_box">필수 정보입니다.</span>
-							</div>
+							<div class="join_row join_birthbay">
+									<h3 class="join_title">
+										<label for="yy">생년월일</label>
+									</h3>
+									<div class="bir_wrap">
+										<div class="bir_yy">
+											<span class="ps_box">
+												<input type="text" id="yy" name="yy" class="int" placeholder="년(4자)">
+											</span>
+										</div>
+										<div class="bir_mm">
+											<span class="ps_box">
+												<select id="mm" class="sel">
+													<option>월</option>
+													<option value="01">1</option>
+													<option value="02">2</option>
+													<option value="03">3</option>
+													<option value="04">4</option>
+													<option value="05">5</option>
+													<option value="06">6</option>
+													<option value="07">7</option>
+													<option value="08">8</option>
+													<option value="09">9</option>
+													<option value="10">10</option>
+													<option value="11">11</option>
+													<option value="12">12</option>
+												</select>
+											</span>
+										</div>
+										<div class="bir_dd">
+											<span class="ps_box">
+												<input type="text" id="dd" class="int" placeholder="일">
+											</span>
+										</div>
+									</div>
+									<span class="error_next_box">필수 정보입니다.</span>
+								</div>
 
-							<div class="btn_double_area">
-							<span><a href="#" class="btn_type btn_agree">가입하기</a></span>
+								<div class="row_group">
+									<div class="join_row">
+										<h3 class="join_title">
+											<label for="name">주소</label>
+										</h3>
+										<div class="bir_yy" >
+											<span class="ps_box">
+												<input type="text" id="sample6_postcode" placeholder="우편번호" class="int" readonly>
+											</span>
+										</div>
+										<div class = "bir_mm">
+											<span class="ps_box">
+												<input type="button" id = "btn_post" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="int"><br>
+											</span>
+										</div>
+										<div class="home">	
+											<span class="ps_box">
+												<input type="text" id="sample6_address" placeholder="주소" class="int" readonly><br>
+											</span>
+										</div>
+										<div class="home">
+											<span class="ps_box">
+												<input type="text" id="sample6_detailAddress" placeholder="상세주소" class="int">
+											</span>
+										</div>
+										
+										<span class="error_next_box">필수 정보입니다.</span>
+
+									</div>
+								</div>
+							
+
+								<div class="btn_double_area">
+								<span><a href="#" class="btn_type btn_agree">가입하기</a></span>
+								</div>
 							</div>
-						</div>
 
 						
 				</div>
 			</form>
 		</section>
-		
+
+	<!-- footer -->
 		<footer>
 			<div id="footer">
 				<ul>
@@ -451,110 +461,191 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../../js/validation.js"></script>
 <script type="text/javascript">
-	// $(document).ready(function(){
-
-	// });
-
 	$(function(){
-	
-		// id 유효성체크 :
-		//  >> #uid인 input태그의 값을 가져와서 체크
-		$('#uid').keyup(function(){
-			//trim 좌우여백을 없애는 것
-			// 사용자가 입력한 값의 좌우여백을 제거하고 id에 입력
-			var id = $(this).val().trim(); // 사용자가 입력한 값
-			// validation.js의 checkId로 유효성체크를 실행 후
-			// 결과를 result에 담음(code, desc)
-			// alert(id);
-			var result = joinValidate.checkId(id);
-			// console.log(result.code + ", " + result.desc);
-			// 유효성체크  결과로 테두리색과 err메세지를 출력하는 
-			// 함수 실행
-			ckDesign(result.code, result.desc, 0, 0); // 테두리색상
-		});
+		// 비밀번호가 유효한 값인지 체크해주는 flag값
+		var pwFlag = false;
+			// id 유효성체크 :
+			//  >> #uid인 input태그의 값을 가져와서 체크
+			$('#uid').keyup(function(){
+				//trim 좌우여백을 없애는 것
+				// 사용자가 입력한 값의 좌우여백을 제거하고 id에 입력
+				var id = $(this).val().trim(); // 사용자가 입력한 값
+				// validation.js의 checkId로 유효성체크를 실행 후
+				// 결과를 result에 담음(code, desc)
+				// alert(id);
+				var result = joinValidate.checkId(id);
+				// console.log(result.code + ", " + result.desc);
+				// 유효성체크  결과로 테두리색과 err메세지를 출력하는 
+				// 함수 실행
+				ckDesign(result.code, result.desc, 0, 0); // 테두리색상
+			});
 
 		// 비밀번호 유효성체크
-		$('#upswd1').keyup(function(){
-			var pw = $.trim($(this).val());
-			var result = joinValidate.checkPw(pw);
+			$('#upswd1').keyup(function(){
+				// 1. 사용자가 입력한 값 받기
+				var pw = $.trim($('#upswd1').val());
+				var rpw = $.trim($('#upswd2').val());
+				// alert( pw+ "," +rpw);
+				// 2. 유효성 체크 하기
+				var result = joinValidate.checkPw(pw ,rpw);
+				if (result.code == 0 || result.code == 10 || result.code == 6) {
+					// $('.ps_box:eq(2)').css('border-bottom', '2px solid #3885ca');	
+					pwFlag = true;
+				} else {
+					pwFlag = false;
+				}
+				// 3. 체크 결과에 따라 디자인하기
+				ckDesign(result.code, result.desc, 2, 1); // 테두리색상
 
-			ckDesign(result.code, result.desc, 1, 1); // 테두리색상
+			});
 
+		// 비밀번호 재확인 유효성체크
+			$('#upswd2').keyup(function(){
+				var pw = $.trim($('#upswd1').val());
+				var rpw = $.trim($('#upswd2').val());
+				// console.log(pw + "," +rpw);
+
+				var result = joinValidate.checkRpw(pw,rpw, pwFlag);
+				if(result.code == 10) {
+					$('.ps_box:eq(1)').css('border-bottom', '2px solid #3885ca');			
+				} else if(result.code == 6) {
+					$('.ps_box:eq(1)').css('border-bottom', '2px solid #3885ca');
+
+				}
+
+				ckDesign(result.code, result.desc, 2, 1); // 디자인한 갯수로 맞추기 (border-1,에러메시지-1)
+
+			});
+
+		// 이름 유효성체크
+			$('#uname').keyup(function(){
+				var name = $.trim($('#uname').val());
+				console.log(name);
+				// alert(name);
+				var result = joinValidate.checkName(name);
+				ckDesign(result.code, result.desc, 3, 2);
+
+			});
+
+		// 전화번호 유효성체크
+			$('#uphone').keyup(function(){
+				var phone = $.trim($('#uphone').val());
+				// console.log(phone);
+				var result = joinValidate.checkPhone(phone);
+				ckDesign(result.code, result.desc, 4, 3);
+
+			});
+
+		// 이메일 유효성체크
+		$('#uemail').keyup(function(){
+			var email = $.trim($(this).val());
+			// console.log(email);
+			var result = joinValidate.checkEmail(email);
+			ckDesign(result.code, result.desc, 5, 4);
 		});
-	});
+
+		$('.addr_only').click(function(){
+			// 사용자가 우편번호 또는 주소 input을 클릭했을 때
+			$('#btn_post').click();
+		});
+
+		// 상세주소를 클릭하면
+		$('#sample6_detailAddress').click(function(){
+			var addrPost = $('#sample6_postcode').val();
+			if (addrPost == '' || addrPost.length == 0) {
+				$('#btn_post').click();
+			}
+		});
+
+
+		// 주소유효성 체크
+		$('#sample6_detailAddress').keyup(function(){
+			var addrDetail = $.trim($(this).val());
+			var addrPost = $('#sample6_postcode').val();
+			// console.log('우편번호:' +addrPost+', 상세주소' +addrDetail);
+
+			var result = joinValidate.checkAddr(addrDetail, addrPost);
+
+			if(result.code == 3) { // 우편번호 & 주소x
+				ckDesign(result.code, result.desc, 10, 7);
+				ckDesign(result.code, result.desc, 12, 7);
+
+			} else if (result.code == 0) { // 상세주소x
+				ckDesign(result.code, result.desc, 10, 7);
+				ckDesign(result.code, result.desc, 12, 7);
+				ckDesign(result.code, result.desc, 13, 7);
+			} else {
+				ckDesign(result.code, result.desc, 13, 7);
+			}
+		});
+
 
 		function ckDesign(code, desc, line, msg) {
-			if (code != 0) { // 통과 X
+			if (code == 0 || code == 10) { // 통과 o
+				$('.ps_box:eq('+line+')').css('border-bottom', '2px solid #3885ca');
+				$('.error_next_box:eq('+ msg +')').css('visibility', 'visible')
+									   .text(desc)
+									   .css('color','#3885ca');
+				return true;		
+			} else { // 통과 O
 				$('.ps_box:eq('+line +')').css('border-bottom', '2px solid #d95339'); //테두리색상변경
 				$('.error_next_box:eq('+ msg +')').css('visibility', 'visible') //
 									   .text(desc)
 									   .css('color','#d95339');
 				return false;
-			} else { // 통과 O
-				$('.ps_box:eq('+line +')').css('border-bottom', '2px solid #3885ca');
-				$('.error_next_box:eq('+ msg +')').css('visibility', 'visible')
-									   .text(desc)
-									   .css('color','#3885ca');
-				return true;		
 
 			}
-		}
-			
-
-
-
-
-
-
+		}//function ckDesign(code, desc, line, msg)
+});
 </script>
+<!-- daum 주소 -->
+	<script>
+	    function sample6_execDaumPostcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-<script>
-    function sample6_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+	                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var addr = ''; // 주소 변수
+	                var extraAddr = ''; // 참고항목 변수
 
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
+	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+	                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+	                    addr = data.roadAddress;
+	                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+	                    addr = data.jibunAddress;
+	                }
 
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
+	                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+	                if(data.userSelectedType === 'R'){
+	                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+	                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+	                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                        extraAddr += data.bname;
+	                    }
+	                    // 건물명이 있고, 공동주택일 경우 추가한다.
+	                    if(data.buildingName !== '' && data.apartment === 'Y'){
+	                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                    }
+	                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+	                    if(extraAddr !== ''){
+	                        extraAddr = ' (' + extraAddr + ')';
+	                    }
+	                    // 조합된 참고항목을 해당 필드에 넣는다.
+	                    document.getElementById("sample6_extraAddress").value = extraAddr;
+	                
+	                } else {
+	                    document.getElementById("sample6_extraAddress").value = '';
+	                }
 
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    document.getElementById("sample6_extraAddress").value = extraAddr;
-                
-                } else {
-                    document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample6_postcode').value = data.zonecode;
-                document.getElementById("sample6_address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample6_detailAddress").focus();
-            }
-        }).open();
-    }
-</script>
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('sample6_postcode').value = data.zonecode;
+	                document.getElementById("sample6_address").value = addr;
+	                // 커서를 상세주소 필드로 이동한다.
+	                document.getElementById("sample6_detailAddress").focus();
+	            }
+	        }).open();
+	    }
+	</script>
 </html>

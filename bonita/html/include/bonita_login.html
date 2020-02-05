@@ -128,7 +128,7 @@
 			margin: 9px 0 -2px;
 			font-size: 12px;
 			line-height: 14px;
-			color: red;
+			color: #d95339;
 			height: 15px;
 			visibility: hidden;
 		}
@@ -188,7 +188,7 @@
 		.btn_double_area {
 			margin: 30px 0 9px;
 		}
-		.btn_type {
+		.btn_join {
 			display: block;
 			width: 100%;
 			padding: 21px 0 17px;
@@ -244,6 +244,7 @@
 		#address a:hover {
 			color: #8E85D6;
 		}
+		
 /*css 종료*/
 	</style>
 </head>
@@ -283,15 +284,16 @@
 									<input type="password" id="upswd1" name="upswd1" class="int">
 									<span class="step_url"><span class="pw_lock"></span></span>
 								</span>
-								<div>
-								<span class="ps_box int_pass">
-									<input type="password" id="upswd2" name="upswd2" class="int">
-									<span class="step_url"><span class="repw_lock"></span></span>
-								</span>
-								<span class="error_next_box">필수 정보입니다.</span>
+								<div>									
+									<div style="margin: 10px 0px;">
+									<span class="ps_box int_pass">
+										<input type="password" id="upswd2" name="upswd2" class="int">
+										<span class="step_url"><span class="repw_lock"></span></span>
+									</span>
+									<span class="error_next_box">필수 정보입니다.</span>
 								
+								</div>
 							</div>
-
 							<!-- <div class="join_row">
 								<h3 class="join_title">
 									<label for="pswd2">비밀번호 재확인</label>
@@ -336,7 +338,7 @@
 								</span>
 								<span class="error_next_box">필수 정보입니다.</span>
 							</div>
-
+<!-- 
 							<div class="join_row">
 								<h3 class="join_title">
 									<label for="male">성별</label>
@@ -349,10 +351,10 @@
 									</select>
 								</span>
 								<span class="error_next_box">필수 정보입니다.</span>
-							</div>
+							</div> -->
 
 
-							<div class="join_row join_birthbay">
+						<!-- 	<div class="join_row join_birthbay">
 									<h3 class="join_title">
 										<label for="yy">생년월일</label>
 									</h3>
@@ -389,7 +391,7 @@
 									</div>
 									<span class="error_next_box">필수 정보입니다.</span>
 								</div>
-
+ -->
 								<div class="row_group">
 									<div class="join_row">
 										<h3 class="join_title">
@@ -397,22 +399,22 @@
 										</h3>
 										<div class="bir_yy" >
 											<span class="ps_box">
-												<input type="text" id="sample6_postcode" placeholder="우편번호" class="int" readonly>
+												<input type="text" id="sample6_postcode"  class="int" value="123-456" placeholder="우편번호" class="int" readonly>
 											</span>
 										</div>
 										<div class = "bir_mm">
 											<span class="ps_box">
-												<input type="button" id = "btn_post" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="int"><br>
+												<input type="button" id = "btn_post" class="int" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="int"><br>
 											</span>
 										</div>
 										<div class="home">	
 											<span class="ps_box">
-												<input type="text" id="sample6_address" placeholder="주소" class="int" readonly><br>
+												<input type="text" id="sample6_address" class="int" placeholder="주소" value="광주광역시 북구 중흥동" class="int" readonly><br>
 											</span>
 										</div>
 										<div class="home">
 											<span class="ps_box">
-												<input type="text" id="sample6_detailAddress" placeholder="상세주소" class="int">
+												<input type="text" id="sample6_detailAddress" class="int" placeholder="상세주소" class="int">
 											</span>
 										</div>
 										
@@ -423,7 +425,8 @@
 							
 
 								<div class="btn_double_area">
-								<span><a href="#" class="btn_type btn_agree">가입하기</a></span>
+									<button id = "btn_join" type="button" class ="btn_join btn_agree" >가입하기</button>
+								<!-- <span><a href="#" class="btn_type btn_agree">가입하기</a></span> -->
 								</div>
 							</div>
 
@@ -464,7 +467,16 @@
 	$(function(){
 		// 비밀번호가 유효한 값인지 체크해주는 flag값
 		var pwFlag = false;
-			// id 유효성체크 :
+
+		// 유효성체크 여부를 알려주는 배열
+		var checkArr = new Array(7).fill(false);
+		// printCheckArr(checkArr);
+
+		// 유효성체크 모두 통과 or 불통 여부를 알려주는 변수
+		var checkAll = true;
+
+		
+			// 아이디 유효성체크 :
 			//  >> #uid인 input태그의 값을 가져와서 체크
 			$('#uid').keyup(function(){
 				//trim 좌우여백을 없애는 것
@@ -477,6 +489,13 @@
 				// console.log(result.code + ", " + result.desc);
 				// 유효성체크  결과로 테두리색과 err메세지를 출력하는 
 				// 함수 실행
+
+				if(result.code == 0) {
+					checkArr[0] = 'true';
+				} else {
+					checkArr[0] = 'false';
+				}
+				printCheckArr(checkArr);
 				ckDesign(result.code, result.desc, 0, 0); // 테두리색상
 			});
 
@@ -494,7 +513,14 @@
 				} else {
 					pwFlag = false;
 				}
+
+				if (result.code == 0) {
+					checkArr[1] = true;
+				} else {
+					checkArr[1] = false;
+				}
 				// 3. 체크 결과에 따라 디자인하기
+				// printCheckArr(checkArr);
 				ckDesign(result.code, result.desc, 2, 1); // 테두리색상
 
 			});
@@ -507,12 +533,15 @@
 
 				var result = joinValidate.checkRpw(pw,rpw, pwFlag);
 				if(result.code == 10) {
+					checkArr[1] = true;
 					$('.ps_box:eq(1)').css('border-bottom', '2px solid #3885ca');			
 				} else if(result.code == 6) {
+					checkArr[2] = false;
 					$('.ps_box:eq(1)').css('border-bottom', '2px solid #3885ca');
-
+				} else {
+					checkArr[1] = false;
 				}
-
+				// printCheckArr(checkArr);
 				ckDesign(result.code, result.desc, 2, 1); // 디자인한 갯수로 맞추기 (border-1,에러메시지-1)
 
 			});
@@ -520,9 +549,16 @@
 		// 이름 유효성체크
 			$('#uname').keyup(function(){
 				var name = $.trim($('#uname').val());
-				console.log(name);
+				// console.log(name);
 				// alert(name);
 				var result = joinValidate.checkName(name);
+
+				if (result.code == 0) {
+					checkArr[2] = true;
+				} else {
+					checkArr[2] =false;
+				}
+				// printCheckArr(checkArr);
 				ckDesign(result.code, result.desc, 3, 2);
 
 			});
@@ -532,6 +568,15 @@
 				var phone = $.trim($('#uphone').val());
 				// console.log(phone);
 				var result = joinValidate.checkPhone(phone);
+
+
+				if (result.code == 0) {
+					checkArr[3] = true;
+				} else {
+					checkArr[3] =false;
+				}
+				// printCheckArr(checkArr);
+				
 				ckDesign(result.code, result.desc, 4, 3);
 
 			});
@@ -541,6 +586,15 @@
 			var email = $.trim($(this).val());
 			// console.log(email);
 			var result = joinValidate.checkEmail(email);
+
+
+				if (result.code == 0) {
+					checkArr[4] = true;
+				} else {
+					checkArr[4] =false;
+				}
+				// printCheckArr(checkArr);
+				
 			ckDesign(result.code, result.desc, 5, 4);
 		});
 
@@ -567,17 +621,69 @@
 			var result = joinValidate.checkAddr(addrDetail, addrPost);
 
 			if(result.code == 3) { // 우편번호 & 주소x
-				ckDesign(result.code, result.desc, 10, 7);
-				ckDesign(result.code, result.desc, 12, 7);
+				ckDesign(result.code, result.desc, 6, 5);
+				ckDesign(result.code, result.desc, 8, 5);
+				checkArr[5] = false;
 
 			} else if (result.code == 0) { // 상세주소x
-				ckDesign(result.code, result.desc, 10, 7);
-				ckDesign(result.code, result.desc, 12, 7);
-				ckDesign(result.code, result.desc, 13, 7);
+				ckDesign(result.code, result.desc, 6, 5);
+				ckDesign(result.code, result.desc, 8, 5);
+				ckDesign(result.code, result.desc, 9, 5);
+				checkArr[5] = true;
 			} else {
-				ckDesign(result.code, result.desc, 13, 7);
+				ckDesign(result.code, result.desc, 9, 5);
+				checkArr[5] = false;
+			}
+			// printCheckArr(checkArr);
+		});
+
+
+		// 버튼활성화
+		$(".int").blue(function(){
+			var checkAll = true;
+
+			for (var i = 0; i < checkArr.lenght; i++) {
+				if (!checkArr[i]) {
+					checkAll = false;
+				}
+			}
+			if(checkAll) {
+				$('#btn_join').addClass('btn-primary');
+				// $('#btn_join').prop('disabled', false);
+				$('#btn_join').css('cursor', 'pointer');
+			} else {
+				$('#btn_join').removeClass('btn-primary');
+				// $('#btn_join').prop('disabled', false)
+				$('#btn_join').css('cursor' , 'no-drop');
 			}
 		});
+
+		// 회원가입 버튼 클릭!
+		$('#btn_join').click(function(){
+			var invalidAll = true;
+			for(var i = 0; i< checkArr.length; i++) {
+				if (!checkArr[i]) {
+					invalidAll = false;
+					$('.error_next_box:eq('+i+')').css('visibility','visible')
+									.css('color', '#d95339');
+					// alert('값을 모두 입력해주세요.');
+				}
+				
+			}
+			printCheckArr(checkArr);
+
+			if(invalidAll) {
+				alert('회원가입 성공!');
+			} else { 
+				alert('유효성체크를 진행해주세요!');
+			}
+			// 유효성체크가 전부 true이면
+
+			// 하나라도 false이면
+		});
+
+
+		//
 
 
 		function ckDesign(code, desc, line, msg) {
@@ -596,6 +702,15 @@
 
 			}
 		}//function ckDesign(code, desc, line, msg)
+
+		// 개발시 사용 : 유효성체크 전체여부를 출력해주는 함수(true, false)
+		function printCheckArr(checkArr) {
+			for(var i=0; i<checkArr.length; i++) {
+			console.log(i +'번지:' + checkArr[i]);
+		}
+	}
+
+
 });
 </script>
 <!-- daum 주소 -->

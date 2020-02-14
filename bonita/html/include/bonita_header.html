@@ -9,22 +9,204 @@
 		div{
 			border: 1px solid red;
 		}
+		#wrap {
+			position: relative;
+			min-width: 1280px;
+			overflow: hidden;
+		}
+		#header .bar {
+			width: 100%;
+			z-index: 98;
+			border-bottom: 1px solid #e8e8e8;
+			border-bottom-color: rgba(0,0,0,.09);
+		}
+		.inner {
+			padding: 0 10px;
+			width: 1260px;
+			margin: 0 auto;
+		}
+		ul.gnb {
+			float: left;
+			display: inline-block;
+			text-align: center;
+		}
+		#header .bar ul.gnb > li:nth-child(1) {
+			margin-left: 0;
+			transition: margin-left 0.3s 0.6s ease;
+		}
+		ul.gnb > li {
+			float: left;
+			position: relative;
+			margin-left: 16px;
+			white-space: nowrap;
+		}
+		ul.gnb > li a {
+			font-size: 11px;
+			line-height: 42px;
+			color: #222;
+			letter-spacing: 0.5px;
+			white-space: nowrap;
+		}
+		ul.gnb > li span.cart-count {
+			display: inline-block;
+			min-width: 11px;
+			height: 14px;
+			line-height: 14px;
+			margin: -1px 0 0 2px;
+			padding: 1px 3px;
+			text-align: center;
+			border-radius: 50%;
+			font-size: 10px;
+			color: #555;
+			letter-spacing: 0.5px;
+			vertical-align: middle;
+		}
+		ul.mnb li a {
+			display: block;
+			font-size: 11px;
+			line-height: 23px;
+			padding: 0 13px; 
+			color: #545454;
+		}
+		#header .bar ul.bnb {
+			float: right;
+		}
+		#header .bar ul.bnb li:first-child {
+			margin-left: 0;
+		}
+		#header .bar ul.bnb li a {
+			font-size: 11px;
+			line-height: 42px;
+			color: #222;
+			letter-spacing: 0.5px;
+			white-space: nowrap;
+		}
+		#header .bar ul.bnb li {
+			float: left;
+			text-align: center;
+			font-size: 11px;
+			line-height: 42px;
+			margin-left: 19px;
+		}
+		#header .bar ul.gnb > li .msgbox > span {
+			margin: -8px 0 0 0;
+			display: block;
+			padding: 1px 7px;
+			background: #e4e4e4;
+			border-radius: 7px;
+			font-size: 10px;
+			line-height: 18px;
+			color: #333;
+			letter-spacing: 0.5px;
+		}
+		#header .bar ul.gnb > li .msgbox > i {
+			display: block;
+			color: #e4e4e4;
+			font-size: 18px;
+		}
+		#header .spot {
+			width: 100%;
+		}
+		#header .spot .inner {
+			position: relative;
+			width: 1260px;
+			margin: 0 auto 0;
+			padding: 25px 0;
+			text-align: center;
+			font-size: 0;
+			min-height: 70px;
+			display: table;
+
+		}
+		#header .spot .inner h1.top-logo a.logo {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		img {
+			border: none;
+			vertical-align: top;
+		}
 	</style>
 </head>
 <body>
 	<div id="wrap" class="main">
 		<div id="header">
-			<div style="height:43px;">
+			<div style>
 				<div class="bar" df-fixed-id="gnb" style="top:0px;">
 					<div class="inner">
 						<ul class="gnb">
-							<li class="home"></li>
-							<li class="xans-element- xans-layout xans-layout-statelogoff first-menu "></li>
-							<li class="xans-element- xans-layout xans-layout-statelogoff "></li>
-
+							<li class="xans-element- xans-layout xans-layout-statelogoff ">
+								<a href="#" class="log">LOGIN</a>
+							</li>
+							<li class="xans-element- xans-layout xans-layout-statelogoff ">
+								<a href="#">JOIN US</a>
+								<div class="msgbox use-msgbox" style="display: block;">
+									<i class="fa fa-caret-up">
+										
+									</i>
+									<span class="rep-msgbox">+1,000 P</span>
+								</div>
+							</li>
+							<li>
+								<a href="#">CART</a>
+								<span class="xans-element- xans-layout xans-layout-orderbasketcount cart-count EC-Layout_Basket-count-display ">
+									<span class="EC-Layout_Basket-count">0</span>
+								</span>
+							</li>
+							<li>
+								<a href="#">ORDER</a>
+							</li>
+							<li class="myshop">
+								<a href="#">MY PAGE</a>
+								<ul class="xans-element- xans-myshop xans-myshop-main mnb">
+									<li>
+										<a href="#">관심상품</a>
+									</li>
+									<li>
+										<a href="#">주문조회</a>
+									</li>
+									<li>
+										<a href="#">적립금</a>
+									</li>
+									<li>
+										<a href="#">내가쓴글</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" target="_blank" onclick="winPop(this.href); return false">+BOOKMARK</a>
+							</li>
 						</ul>
-						<ul class="xans-element- xans-layout xans-layout-boardinfo bnb-summary"></ul>
-						<div class="right"></div>
+						<ul class="xans-element- xans-layout xans-layout-boardinfo bnb">
+							<li class="xans-record">
+								<a href="#">NOTICE</a>
+							</li>
+							<li class="xans-record">
+								<a href="#">Q&N</a>
+							</li>
+							<li class="xans-record">
+								<a href="#">REVIEW</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="spot">
+				<div class="inner">
+					<h1 class="xans-element- xans-bannermanage2 xans-bannermanage2-display-18 xans-bannermanage2-display xans-bannermanage2-18 top-logo">
+						<a href="#" class="logo">
+							<span class="xans-record-" style="opacity: 1;">
+								<img class="banner_image" alt="로고" src="C:/bizwork/workspace/webdesign_workspace/bonita/img/c.png" >
+							</span>
+						</a>
+					</h1>
+					<div class="xans-element- xans-layout xans-layout-multishoplist globalThumb"></div>
+					<ul class="sns"></ul>
+					<div id="search-box">
+						<form id="searchBarForm" name action=""
+						method="get" target="_self"></form>
 					</div>
 				</div>
 			</div>
